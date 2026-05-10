@@ -150,11 +150,11 @@ print(df.dtypes)
 
 Initial output:
 ```
-patient_id        int64    ✅ correct
-patient_name      object   ✅ fine — text is always object
-patient_dob       object   ❌ should be datetime
-diagnosis_code    object   ✅ fine — it's a code string
-admission_date    object   ❌ should be datetime
+patient_id        int64     correct
+patient_name      object    fine — text is always object
+patient_dob       object    should be datetime
+diagnosis_code    object    fine — it's a code string
+admission_date    object   should be datetime
 ```
 
 `patient_dob` and `admission_date` showed as `object` (text) because pandas
@@ -174,9 +174,9 @@ After fix:
 ```
 patient_id                      int64
 patient_name                   object
-patient_dob            datetime64[ns]       ✅ fixed
+patient_dob            datetime64[ns]        fixed
 diagnosis_code                 object
-admission_date    datetime64[ns, UTC]       ✅ fixed
+admission_date    datetime64[ns, UTC]        fixed
 ```
 
 `admission_date` became `datetime64[ns, UTC]` because its original values
